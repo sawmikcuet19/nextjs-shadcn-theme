@@ -1,36 +1,131 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js Shadcn Dashboard
+
+A modern, responsive admin dashboard built with Next.js 16, React 19, TypeScript, Tailwind CSS v4, and shadcn/ui components. This project was created as a learning exercise following tutorials on Next.js and modern React development.
+
+## Features
+
+- **Dashboard Overview** - Visual data representation with multiple chart types
+- **Data Visualization** - Area charts, Bar charts, and Pie charts using Recharts
+- **Data Tables** - Sortable and filterable tables with pagination using TanStack Table
+- **Responsive Sidebar** - Collapsible navigation with nested menu items
+- **Dark/Light Theme** - Theme switching with next-themes
+- **Modern UI Components** - Built with shadcn/ui and Radix UI primitives
+- **Form Handling** - Form validation with React Hook Form and Zod
+- **TypeScript** - Full type safety throughout the application
+
+## Tech Stack
+
+- **Framework:** [Next.js 16](https://nextjs.org/) (App Router)
+- **UI Library:** [React 19](https://react.dev/)
+- **Language:** [TypeScript](https://www.typescriptlang.org/)
+- **Styling:** [Tailwind CSS v4](https://tailwindcss.com/)
+- **Components:** [shadcn/ui](https://ui.shadcn.com/)
+- **Charts:** [Recharts](https://recharts.org/)
+- **Tables:** [TanStack Table](https://tanstack.com/table)
+- **Forms:** [React Hook Form](https://react-hook-form.com/) + [Zod](https://zod.dev/)
+- **Icons:** [Lucide React](https://lucide.dev/)
+
+## Project Structure
+
+```
+src/
+├── app/                    # Next.js app router pages
+│   ├── page.tsx           # Dashboard home page
+│   ├── layout.tsx         # Root layout with sidebar/navbar
+│   ├── globals.css        # Global styles and CSS variables
+│   ├── users/             # Users page
+│   └── payments/          # Payments page with data table
+├── components/
+│   ├── ui/                # shadcn/ui components
+│   ├── AppSidebar.tsx     # Navigation sidebar
+│   ├── Navbar.tsx         # Top navigation bar
+│   ├── AppAreaChart.tsx   # Area chart component
+│   ├── AppBarChart.tsx    # Bar chart component
+│   ├── AppPieChart.tsx    # Pie chart component
+│   ├── CardList.tsx       # Transaction/content cards
+│   ├── TodoList.tsx       # Task management list
+│   ├── TablePagination.tsx # Table pagination controls
+│   └── providers/         # Context providers
+├── hooks/                 # Custom React hooks
+└── lib/                   # Utility functions
+```
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
+- Node.js 18+ or Bun
+
+### Installation
+
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone <repository-url>
+cd next-shadcn-project
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+bun install
+# or
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Run the development server:
+```bash
+bun dev
+# or
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Learn More
+### Build for Production
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+bun run build
+# or
+npm run build
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Lint
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+bun run lint
+# or
+npm run lint
+```
 
-## Deploy on Vercel
+## Available Scripts
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- `dev` - Start development server
+- `build` - Build production application
+- `start` - Start production server
+- `lint` - Run ESLint
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Pages
+
+| Route | Description |
+|-------|-------------|
+| `/` | Dashboard with charts and overview cards |
+| `/users` | User management page |
+| `/payments` | Payments data table with sorting/filtering |
+
+## Key Components
+
+- **AppSidebar** - Responsive navigation with collapsible groups and nested items
+- **DataTable** - Full-featured table with pagination, built with TanStack Table
+- **Charts** - Responsive data visualization components (Area, Bar, Pie)
+- **ThemeProvider** - Dark/light mode switching support
+
+## Acknowledgments
+
+This project was built as a learning exercise following tutorials on:
+- Next.js App Router
+- shadcn/ui components
+- Tailwind CSS v4
+- Modern React patterns
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
